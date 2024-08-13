@@ -1,0 +1,24 @@
+from statsmodels.tsa.ar_model import AutoReg
+from statsmodels.tsa.arima_model import ARMA
+from statsmodels.tsa.arima.model import ARIMA
+
+def train_ar_model(data, lags):
+    model = AutoReg(data, lags=lags)
+    model_fit = model.fit()
+    return model_fit
+
+def train_ma_model(data, order):
+    model = ARMA(data, order=(0, order))
+    model_fit = model.fit()
+    return model_fit
+
+def train_arma_model(data, order):
+    model = ARMA(data, order=order)
+    model_fit = model.fit()
+    return model_fit
+
+def train_arima_model(data, order):
+    model = ARIMA(data, order=order)
+    model_fit = model.fit()
+    return model_fit
+

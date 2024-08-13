@@ -1,0 +1,16 @@
+import torch
+
+def evaluate_model(model, data_loader):
+    model.eval()
+    predictions = []
+    true_values = []
+
+    with torch.no_grad():
+        for inputs, targets in data_loader:
+            inputs, targets = inputs.to(device), targets.to(device)
+            outputs = model(inputs)
+            predictions.extend(outputs.cpu().numpy())
+            true_values.extend(targets.cpu().numpy())
+
+    return true_values, predictions
+

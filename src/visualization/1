@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+
+def plot_predictions(true_values, predictions):
+    plt.figure(figsize=(10, 6))
+    plt.plot(true_values, label='True Values')
+    plt.plot(predictions, label='Predictions')
+    plt.legend()
+    plt.show()
+
